@@ -1,152 +1,160 @@
 /* src/pages/index.module.css */
 .homepageContainer {
-    padding: 0;
+  padding: 0;
+}
+
+.servicesSection {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.servicesSection h2 {
+  font-size: 2.2em;
+  margin-bottom: 30px;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.serviceCard {
+  background-color: var(--color-background);
+  border-radius: 12px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 4px 6px var(--color-box-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Přidána transition pro box-shadow */
+}
+
+/* Dark mode styles */
+:global(.dark) .serviceCard {
+  background-color: #1a1a1a;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.serviceTitle {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin: 0 0 20px 0;
+  letter-spacing: 0.5px;
+  color: var(--color-text-primary);
+}
+
+:global(.dark) .serviceTitle {
+  color: var(--color-text-primary);
+}
+
+/* Coaching+ gradient */
+.serviceCard:first-child .serviceTitle {
+  background: linear-gradient(45deg, #3B82F6, #60A5FA);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+:global(.dark) .serviceCard:first-child .serviceTitle {
+  background: linear-gradient(45deg, #60A5FA, #93C5FD);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.serviceFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 auto 0;
+  width: 100%;
+}
+
+.serviceFeatures li {
+  color: var(--color-text-secondary);
+  margin-bottom: 12px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+:global(.dark) .serviceFeatures li {
+  color: var(--color-text-secondary);
+}
+
+.priceContainer {
+  margin: 20px 0;
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--color-primary);
+}
+
+:global(.dark) .price {
+  color: var(--color-primary);
+}
+
+.period {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+}
+
+:global(.dark) .period {
+  color: var(--color-text-secondary);
+}
+
+.serviceButton {
+  background: none;
+  border: 1px solid var(--color-text-primary);
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  color: var(--color-text-primary);
+}
+
+:global(.dark) .serviceButton {
+  border: 1px solid var(--color-background);
+  color: var(--color-background);
+}
+
+.serviceButton:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+:global(.dark) .serviceButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Hover effect for service cards - POPUP EFFECT */
+.serviceCard:hover {
+    transform: translateY(-8px); /* Jemný posun nahoru při hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Výraznější stín při hover */
   }
-  
-  .servicesSection {
-    padding: 60px 20px;
-    text-align: center;
-  }
-  
-  .servicesSection h2 {
-    font-size: 2.2em;
-    margin-bottom: 30px;
-  }
-  
+
+
+@media (max-width: 1024px) {
   .servicesGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    grid-template-columns: repeat(2, 1fr);
   }
-  
+}
+
+@media (max-width: 768px) {
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+
   .serviceCard {
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 20px;
   }
-  
-  /* Dark mode styles */
-  :global(.dark) .serviceCard {
-    background-color: #1a1a1a;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  }
-  
-  .serviceTitle {
-    font-size: 1.5rem;
-    font-weight: 900;
-    margin: 0 0 20px 0;
-    letter-spacing: 0.5px;
-    color: #000;
-  }
-  
-  :global(.dark) .serviceTitle {
-    color: #fff;
-  }
-  
-  /* Coaching+ gradient */
-  .serviceCard:first-child .serviceTitle {
-    background: linear-gradient(45deg, #3B82F6, #60A5FA);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  :global(.dark) .serviceCard:first-child .serviceTitle {
-    background: linear-gradient(45deg, #60A5FA, #93C5FD);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  .serviceFeatures {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 auto 0;
-    width: 100%;
-  }
-  
-  .serviceFeatures li {
-    color: #333;
-    margin-bottom: 12px;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-  }
-  
-  :global(.dark) .serviceFeatures li {
-    color: #e5e5e5;
-  }
-  
-  .priceContainer {
-    margin: 20px 0;
-    display: flex;
-    align-items: baseline;
-    gap: 5px;
-  }
-  
-  .price {
-    font-size: 2rem;
-    font-weight: 900;
-    color: #000;
-  }
-  
-  :global(.dark) .price {
-    color: #fff;
-  }
-  
-  .period {
-    color: #666;
-    font-size: 1rem;
-  }
-  
-  :global(.dark) .period {
-    color: #999;
-  }
-  
-  .serviceButton {
-    background: none;
-    border: 1px solid #000;
-    padding: 8px 20px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    transition: all 0.3s ease;
-    color: #000;
-  }
-  
-  :global(.dark) .serviceButton {
-    border: 1px solid #fff;
-    color: #fff;
-  }
-  
-  .serviceButton:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-  }
-  
-  :global(.dark) .serviceButton:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  
-  @media (max-width: 1024px) {
-    .servicesGrid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .servicesGrid {
-      grid-template-columns: 1fr;
-    }
-    
-    .serviceCard {
-      padding: 20px;
-    }
-  }
+}
