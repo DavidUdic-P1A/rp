@@ -1,0 +1,73 @@
+/* src/styles/globals.css */
+
+/* Definice barev pro Light mode (výchozí) */
+:root {
+  --color-background: #fff;       /* Bílé pozadí */
+  --color-text-primary: #333;     /* Tmavě šedý hlavní text */
+  --color-text-secondary: #555;   /* Šedý sekundární text */
+  --color-primary: #007bff;        /* Modrá primární barva (tlačítka, odkazy) */
+  --color-primary-hover: #0056b3;  /* Tmavší modrá pro hover */
+  --color-secondary-background: #f8f8f8; /* Světle šedé pozadí sekcí */
+  --color-box-shadow: rgba(0, 0, 0, 0.1); /* Stín pro boxy */
+  --color-input-border: #ccc;      /* Border inputů */
+  --color-input-focus-border: #007bff; /* Border inputů při focusu */
+  --color-input-focus-shadow: rgba(0, 123, 255, 0.2); /* Stín inputů při focusu */
+  --color-button-primary: #28a745; /* Zelená barva primárního tlačítka */
+  --color-button-primary-hover: #218838; /* Tmavší zelená pro hover tlačítka */
+  --color-navbar-background: white; /* Bílé pozadí navbaru */
+  --color-navbar-shadow: rgba(0, 0, 0, 0.1); /* Stín navbaru */
+  --color-footer-background: #333;  /* Tmavě šedé pozadí footeru */
+  --color-footer-text: white;       /* Bílý text ve footeru */
+}
+
+/* Definice barev pro Dark mode */
+body.dark-mode {
+  --color-background: #121212;     /* Tmavé pozadí */
+  --color-text-primary: #eee;     /* Světle šedý hlavní text */
+  --color-text-secondary: #ccc;   /* Světle šedý sekundární text */
+  --color-primary: #64b5f6;        /* Světlejší modrá primární barva */
+  --color-primary-hover: #42a5f5;  /* Ještě světlejší modrá pro hover */
+  --color-secondary-background: #212121; /* Tmavší šedé pozadí sekcí */
+  --color-box-shadow: rgba(255, 255, 255, 0.08); /* Světlejší stín pro boxy */
+  --color-input-border: #555;      /* Border inputů v dark mode */
+  --color-input-focus-border: #64b5f6; /* Border inputů při focusu v dark mode */
+  --color-input-focus-shadow: rgba(100, 181, 246, 0.4); /* Stín inputů při focusu v dark mode */
+  --color-button-primary: #4caf50; /* Světlejší zelená barva primárního tlačítka v dark mode */
+  --color-button-primary-hover: #43a047; /* Ještě světlejší zelená pro hover tlačítka v dark mode */
+  --color-navbar-background: #1e1e1e; /* Tmavší pozadí navbaru v dark mode */
+  --color-navbar-shadow: rgba(255, 255, 255, 0.08); /* Světlejší stín navbaru v dark mode */
+  --color-footer-background: #000;  /* Černé pozadí footeru v dark mode */
+  --color-footer-text: #ddd;       /* Světle šedý text ve footeru v dark mode */
+}
+
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: var(--color-text-primary); /* Používáme CSS proměnnou pro barvu textu */
+  background-color: var(--color-background); /* Používáme CSS proměnnou pro pozadí */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Animace pro změnu barev při přepínání režimů */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}

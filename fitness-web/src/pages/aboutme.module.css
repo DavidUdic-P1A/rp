@@ -1,0 +1,99 @@
+/* src/pages/aboutme.module.css */
+.oMneContainer {
+    padding: 60px 20px; /* Větší horní padding pro stránku O mně */
+    text-align: center; /* Centrování obsahu stránky */
+  }
+  
+  .pageTitle {
+    margin-bottom: 30px;
+    font-size: 3em; /* Větší font pro nadpis stránky */
+    color: #333;
+    font-weight: 700; /* Tučnější nadpis */
+  }
+  
+  .uvodSection {
+    margin-bottom: 60px; /* Větší margin pod úvodní sekcí */
+  }
+  
+  .profilovkaContainer { /* Nový kontejner pro profilovku pro centrování */
+    margin: 0 auto 30px auto; /* Centrování profilovky a margin pod ní */
+    width: 200px; /* Menší šířka profilovky */
+    height: 200px; /* Pevná výška pro čtvercový tvar */
+    border-radius: 50%;
+    overflow: hidden; /* Oříznutí obrázku do kruhu */
+  }
+  
+  .profilovka {
+    width: 100%; /* Obrázek vyplní kontejner */
+    height: 100%; /* Obrázek vyplní kontejner */
+    object-fit: cover; /* Vyplnění kontejneru s oříznutím, zachování poměru stran */
+    display: block; /* Odstranění případných mezer pod obrázkem */
+  }
+  
+  .uvodniText { /* Nový styl pro úvodní text */
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #555;
+    max-width: 800px; /* Maximální šířka úvodního textu */
+    margin: 0 auto; /* Centrování úvodního textu */
+    margin-bottom: 40px; /* Margin pod úvodním textem */
+  }
+  
+  .zkusenostiSection {
+    line-height: 1.7;
+    font-size: 1.1em;
+    text-align: left; /* Zarovnání textu v sekci zkušeností doleva */
+    max-width: 800px; /* Maximální šířka sekce zkušeností */
+    margin: 0 auto; /* Centrování sekce zkušeností */
+  }
+  
+  .zkusenostiSection h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center; /* Centrování nadpisu sekce zkušeností */
+  }
+  
+  .zkusenostiSection p {
+    margin-bottom: 25px;
+  }
+  
+  /* Media queries pro menší obrazovky */
+  @media (max-width: 768px) {
+    .oMneContainer {
+      padding: 40px 15px; /* Menší boční padding pro stránku O mně na menších obrazovkách */
+    }
+  
+    .pageTitle {
+      font-size: 2.5em; /* Menší font pro nadpis stránky na menších obrazovkách */
+      margin-bottom: 20px; /* Menší margin pod nadpisem na menších obrazovkách */
+    }
+  
+    .uvodSection {
+      margin-bottom: 40px; /* Menší margin pod úvodní sekcí na menších obrazovkách */
+    }
+  
+    .profilovkaContainer {
+      width: 160px; /* Ještě menší šířka profilovky na menších obrazovkách */
+      height: 160px; /* Ještě menší výška profilovky na menších obrazovkách */
+      margin-bottom: 20px; /* Menší margin pod profilovkou na menších obrazovkách */
+    }
+  
+    .uvodniText {
+      font-size: 1.1em; /* Menší font pro úvodní text na menších obrazovkách */
+      margin-bottom: 30px; /* Menší margin pod úvodním textem na menších obrazovkách */
+    }
+  
+    .zkusenostiSection {
+      padding: 0 15px; /* Boční padding pro sekci zkušeností na menších obrazovkách */
+    }
+  
+    .zkusenostiSection h2 {
+      font-size: 2em; /* Menší font pro nadpis sekce zkušeností na menších obrazovkách */
+      margin-bottom: 15px; /* Menší margin pod nadpisem sekce zkušeností na menších obrazovkách */
+    }
+  
+    .zkusenostiSection p {
+      margin-bottom: 20px; /* Menší margin pod odstavci v sekci zkušeností na menších obrazovkách */
+    }
+  }

@@ -1,0 +1,127 @@
+/* src/components/Navbar.module.css */
+.navbar {
+    position: relative; /* **DŮLEŽITÉ: Přidáváme position: relative;** */
+    background-color: var(--color-navbar-background);
+    padding: 20px;
+    box-shadow: 0 2px 4px var(--color-navbar-shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbarBrand {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  .brandLink {
+    text-decoration: none;
+    color: var(--color-text-primary);
+  }
+  
+  /* Styly pro DESKTOP NAVIGACI */
+  .desktopNav {
+    display: none; /* **SKRYTÉ VE VÝCHOZÍM STAVU - ZOBRAZÍ SE JEN NA DESKTOPU pomocí media query** */
+  }
+  
+  .navList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+  }
+  
+  .navItem {
+    margin: 0;
+  }
+  
+  .navLink {
+    text-decoration: none;
+    color: var(--color-text-primary);
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .navLink:hover {
+    background-color: var(--color-secondary-background);
+  }
+  
+  /* Styly pro MOBILNÍ NAVIGACI (hamburger menu) */
+  .mobileNav {
+    display: flex; /* Flexbox pro mobilní nav */
+    align-items: center; /* Vertikální centrování */
+  }
+  
+  .menuToggleButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: 10px; /* Odsazení hamburger ikony od brandu */
+  }
+  
+  .mobileMenu {
+    position: absolute; /* Absolutní pozice pro překrytí obsahu */
+    top: 100%; /* Umístění pod Navbar */
+    right: 0; /* Zarovnání k pravému okraji */
+    background-color: var(--color-navbar-background);
+    width: 250px; /* Šířka mobilního menu */
+    box-shadow: -2px 2px 4px var(--color-navbar-shadow); /* Stín mobilního menu */
+    border-radius: 0 0 0 10px; /* Zaoblení rohů mobilního menu */
+    overflow: hidden; /* Skrytí overflow obsahu (pro animace) */
+    transform-origin: top right; /* Transform origin pro animaci */
+    transform: scaleY(0); /* Počáteční stav - vertikálně zmenšené na 0 */
+    transition: transform 0.3s ease-out; /* Animace pro otevření/zavření */
+    z-index: 10; /* Z-index pro překrytí obsahu */
+  }
+  
+  .mobileMenu.open {
+    transform: scaleY(1); /* Cílový stav - plná výška */
+  }
+  
+  .mobileMenuList {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+  }
+  
+  .mobileMenuItem {
+    margin-bottom: 15px;
+  }
+  
+  .mobileMenuItem:last-child {
+    margin-bottom: 0; /* Odstranění marginu u poslední položky */
+  }
+  
+  .mobileMenuLink {
+    display: block; /* Block element pro klikatelnou plochu na celou šířku */
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--color-text-primary);
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .mobileMenuLink:hover {
+    background-color: var(--color-secondary-background);
+  }
+  
+  
+  /* Media query pro DESKTOP (větší než 768px) */
+  @media (min-width: 769px) {
+    .navbar {
+      padding: 20px 30px; /* Větší boční padding na desktopu */
+    }
+  
+    .desktopNav {
+      display: flex; /* **ZOBRAZENÍ DESKTOP NAVIGACE NA DESKTOPU!** */
+      align-items: center; /* Vertikální centrování desktop menu */
+    }
+  
+    .mobileNav {
+      display: none; /* **SKRYTÍ MOBILNÍ NAVIGACE NA DESKTOPU!** */
+    }
+  }

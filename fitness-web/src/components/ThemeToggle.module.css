@@ -1,0 +1,17 @@
+/* src/components/ThemeToggle.module.css */
+.themeToggleButton {
+    background: none; /* Průhledné pozadí tlačítka */
+    border: none; /* Žádný border tlačítka */
+    cursor: pointer; /* Kurzor myši na pointer */
+    padding: 5px; /* Padding tlačítka */
+    color: var(--color-text-primary); /* Barva ikony z CSS proměnné */
+    transition: color 0.3s ease; /* Animace pro změnu barvy ikony */
+  }
+  
+  .themeToggleButton:hover {
+    opacity: 0.8; /* Jemná průhlednost při hover */
+  }
+  
+  .themeToggleButton:focus {
+    outline: none; /* Odstranění focus outline */
+  }

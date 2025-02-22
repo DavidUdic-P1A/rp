@@ -1,0 +1,21 @@
+/* src/components/Layout.module.css */
+.layoutContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Minimální výška na celou výšku obrazovky */
+  }
+  
+  .mainContent {
+    flex: 1; /* Main content zabere zbylý prostor */
+    padding: 30px 40px; /* **ZMĚNA: Větší boční padding - z 20px na 40px** */
+    max-width: 1440px; /* **ZMĚNA: Zvětšujeme max-width - z 960px na 1440px** */
+    margin: 0 auto; /* Centrování obsahu na stránce */
+  }
+  
+  .footer {
+    background-color: var(--color-footer-background);
+    color: var(--color-footer-text);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+  }
