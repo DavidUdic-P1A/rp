@@ -40,27 +40,54 @@ body.dark-mode {
   --color-footer-text: #ddd;       /* Světle šedý text ve footeru v dark mode */
 }
 
-
-html,
-body {
-  padding: 0;
+/* RESET - KRITICKÉ PRO MOBILNÍ ZOBRAZENÍ */
+*, *::before, *::after {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+/* Základní nastavení pro celou stránku */
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
   font-family: 'Arial', sans-serif;
-  color: var(--color-text-primary); /* Používáme CSS proměnnou pro barvu textu */
-  background-color: var(--color-background); /* Používáme CSS proměnnou pro pozadí */
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Animace pro změnu barev při přepínání režimů */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#__next {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Další základní styly */
 a {
   color: inherit;
   text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -70,4 +97,69 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   margin-bottom: 1rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Specifické styly pro layout */
+.layoutContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 30px 40px;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer {
+  background-color: var(--color-footer-background);
+  color: var(--color-footer-text);
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+}
+
+/* Specifická pravidla pro mobilní zařízení */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 15px; /* Mírně menší základní velikost písma na mobilech */
+  }
+  
+  body {
+    -webkit-overflow-scrolling: touch;
+    touch-action: manipulation;
+  }
+  
+  .layoutContainer {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .mainContent {
+    padding: 20px 15px;
+    width: 100%;
+  }
+}
+
+/* Ještě menší obrazovky */
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 14px; /* Ještě menší základní velikost písma na malých mobilech */
+  }
+  
+  .mainContent {
+    padding: 15px 12px;
+  }
 }

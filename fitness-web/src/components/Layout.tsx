@@ -1,6 +1,7 @@
 // src/components/Layout.tsx
 import React, { ReactNode } from 'react';
-import Navbar from './Navbar'; // **DŮLEŽITÉ: Import Navbar!**
+import Navbar from './Navbar';
+import Footer from './Footer'; // Import nové komponenty Footer
 import styles from './Layout.module.css';
 
 interface LayoutProps {
@@ -10,11 +11,9 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className={styles.layoutContainer}>
-      <Navbar /> {/* **DŮLEŽITÉ: Vložení Navbar komponenty!** */}
+      <Navbar />
       <main className={styles.mainContent}>{children}</main>
-      <footer className={styles.footer}>
-        <p>© {new Date().getFullYear()} Fitness Coaching - Všechna práva vyhrazena.</p>
-      </footer>
+      <Footer /> {/* Použití nové komponenty Footer místo jednoduché patičky */}
     </div>
   );
 };

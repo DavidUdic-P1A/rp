@@ -5,8 +5,8 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        {/* Viewport meta tag pro responzivitu */}
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/* Upravený viewport meta tag pro lepší responzivitu */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
       </Head>
       <body>
         <Main />
