@@ -10,21 +10,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer className={styles.footer}>
-      {/* Profesionální CTA sekce */}
-      <div className={styles.footerCta}>
-        <div className={styles.ctaContainer}>
-          <h2>Profesionální osobní trénink na míru</h2>
-          <p>
-            Získejte personalizovaný přístup, který vám pomůže dosáhnout vašich fitness cílů, ať je to redukce váhy, 
-            budování svalové hmoty nebo zlepšení kondice.
-          </p>
-          <Link href="/kontakt" className={styles.ctaButton}>
-            Nezávazná konzultace
-          </Link>
-        </div>
-      </div>
-      
-      {/* Hlavní část patičky */}
+      {/* Hlavní část patičky - bez CTA sekce */}
       <div className={styles.footerMain}>
         <div className={styles.footerContainer}>
           <div className={styles.footerColumn}>

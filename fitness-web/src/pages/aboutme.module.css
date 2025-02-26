@@ -1,99 +1,707 @@
 /* src/pages/aboutme.module.css */
-.oMneContainer {
-    padding: 60px 20px; /* Větší horní padding pro stránku O mně */
-    text-align: center; /* Centrování obsahu stránky */
+.aboutContainer {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Hero Section - Moderní design s animovaným pozadím */
+.heroSection {
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #121212 0%, #121212 100%);
+  overflow: hidden;
+  padding: 60px 20px;
+}
+
+.heroPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(30deg, rgba(0, 136, 204, 0.1) 12%, transparent 12.5%, transparent 87%, rgba(0, 136, 204, 0.1) 87.5%, rgba(0, 136, 204, 0.1)),
+    linear-gradient(150deg, rgba(0, 136, 204, 0.1) 12%, transparent 12.5%, transparent 87%, rgba(0, 136, 204, 0.1) 87.5%, rgba(0, 136, 204, 0.1)),
+    linear-gradient(30deg, rgba(0, 136, 204, 0.1) 12%, transparent 12.5%, transparent 87%, rgba(0, 136, 204, 0.1) 87.5%, rgba(0, 136, 204, 0.1)),
+    linear-gradient(150deg, rgba(0, 136, 204, 0.1) 12%, transparent 12.5%, transparent 87%, rgba(0, 136, 204, 0.1) 87.5%, rgba(0, 136, 204, 0.1)),
+    linear-gradient(60deg, rgba(0, 160, 204, 0.1) 25%, transparent 25.5%, transparent 75%, rgba(0, 160, 204, 0.1) 75%, rgba(0, 160, 204, 0.1)),
+    linear-gradient(60deg, rgba(0, 160, 204, 0.1) 25%, transparent 25.5%, transparent 75%, rgba(0, 160, 204, 0.1) 75%, rgba(0, 160, 204, 0.1));
+  background-size: 80px 140px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+  z-index: 0;
+  animation: movePattern 60s linear infinite;
+}
+
+@keyframes movePattern {
+  0% {
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+  }
+  100% {
+    background-position: 1000px 0, 1000px 0, 1040px 70px, 1040px 70px, 1000px 0, 1040px 70px;
+  }
+}
+
+.heroContent {
+  z-index: 1;
+  text-align: center;
+  max-width: 800px;
+  position: relative;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.subtitle {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0088cc;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  position: relative;
+  padding: 0 10px;
+}
+
+.subtitle::before, .subtitle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 1px;
+  background-color: rgba(0, 136, 204, 0.5);
+}
+
+.subtitle::before {
+  left: -40px;
+}
+
+.subtitle::after {
+  right: -40px;
+}
+
+.title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  margin-bottom: 25px;
+  color: white;
+  line-height: 1.1;
+  position: relative;
+  animation: pulse 3s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 5px rgba(0, 136, 204, 0.3);
+  }
+  100% {
+    text-shadow: 0 0 15px rgba(0, 136, 204, 0.6);
+  }
+}
+
+.separator {
+  height: 3px;
+  width: 80px;
+  background: linear-gradient(90deg, transparent, #0088cc, transparent);
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Intro Section */
+.introSection {
+  padding: 80px 20px;
+  background-color: var(--color-background);
+}
+
+.introWrapper {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 60px;
+  align-items: center;
+}
+
+.imageContainer {
+  flex: 1;
+  position: relative;
+  max-width: 500px;
+}
+
+.imageFrame {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+:global(.dark-mode) .imageFrame {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.trainerImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.imageFrame:hover .trainerImage {
+  transform: scale(1.05);
+}
+
+.experienceBadge {
+  position: absolute;
+  right: -20px;
+  bottom: 40px;
+  background: linear-gradient(135deg, #0088cc, #00a0cc);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 136, 204, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.experienceYears {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.experienceText {
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.introContent {
+  flex: 1;
+  max-width: 600px;
+}
+
+.introTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: var(--color-text-primary);
+  position: relative;
+}
+
+.introTitle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #0088cc, #00a0cc);
+}
+
+.introParagraph {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin-bottom: 20px;
+}
+
+.signatureContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.signatureImage {
+  width: 150px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.signatureInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.signatureName {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.signatureTitle {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Approach Section */
+.approachSection {
+  padding: 80px 20px;
+  background-color: var(--color-background);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 50px;
+  color: var(--color-text-primary);
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -15px;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #0088cc, #00a0cc);
+  transform: translateX(-50%);
+}
+
+.approachContainer {
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+}
+
+.approachText {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.featureCard {
+  padding: 30px;
+  background-color: var(--color-secondary-background);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+:global(.dark-mode) .featureCard {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+:global(.dark-mode) .featureCard:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.featureIconContainer {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #0088cc, #00a0cc);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.featureIcon {
+  font-size: 24px;
+}
+
+.featureTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--color-text-primary);
+}
+
+.featureDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+/* Stats Section */
+.statsSection {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #0088cc, #00a0cc);
+  color: white;
+}
+
+.statsContainer {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.statItem {
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+  padding: 20px;
+}
+
+.statNumber {
+  display: block;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.statText {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Testimonials Section */
+.testimonialsSection {
+  padding: 80px 20px;
+  background-color: var(--color-secondary-background);
+}
+
+.testimonialsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonialCard {
+  padding: 30px;
+  background-color: var(--color-background);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+:global(.dark-mode) .testimonialCard {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.testimonialCard:hover {
+  transform: translateY(-5px);
+}
+
+.testimonialStars {
+  display: flex;
+  color: #FFD700;
+  margin-bottom: 15px;
+  gap: 5px;
+}
+
+.testimonialText {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.testimonialAuthor {
+  display: flex;
+  flex-direction: column;
+}
+
+.authorName {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.authorInfo {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-top: 5px;
+}
+
+/* Certificates Section */
+.certificatesSection {
+  padding: 80px 20px;
+  background-color: var(--color-background);
+}
+
+.certificatesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.certificateCard {
+  padding: 30px;
+  background-color: var(--color-secondary-background);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+:global(.dark-mode) .certificateCard {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.certificateCard:hover {
+  transform: translateY(-5px);
+}
+
+.certificateIcon {
+  color: #0088cc;
+  margin-bottom: 20px;
+}
+
+.certificateTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--color-text-primary);
+}
+
+.certificateDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: 80px 20px;
+  background-color: #111;
+  color: white;
+  text-align: center;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-position: center;
+}
+
+.ctaContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ctaTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.ctaText {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 15px 40px;
+  background: linear-gradient(90deg, #0088cc, #00a0cc);
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 136, 204, 0.3);
+}
+
+/* Dark Mode Specific Overrides */
+:global(.dark-mode) .introSection {
+  background-color: var(--color-background);
+}
+
+:global(.dark-mode) .heroSection {
+  background-color: #000;
+}
+
+:global(.dark-mode) .approachSection {
+  background-color: var(--color-background);
+}
+
+:global(.dark-mode) .ctaSection {
+  background-color: #000;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .introWrapper {
+    gap: 40px;
   }
   
-  .pageTitle {
-    margin-bottom: 30px;
-    font-size: 3em; /* Větší font pro nadpis stránky */
-    color: #333;
-    font-weight: 700; /* Tučnější nadpis */
+  .introTitle {
+    font-size: 2.2rem;
   }
   
-  .uvodSection {
-    margin-bottom: 60px; /* Větší margin pod úvodní sekcí */
+  .title {
+    font-size: 3.5rem;
   }
   
-  .profilovkaContainer { /* Nový kontejner pro profilovku pro centrování */
-    margin: 0 auto 30px auto; /* Centrování profilovky a margin pod ní */
-    width: 200px; /* Menší šířka profilovky */
-    height: 200px; /* Pevná výška pro čtvercový tvar */
-    border-radius: 50%;
-    overflow: hidden; /* Oříznutí obrázku do kruhu */
+  .statsContainer {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .introWrapper {
+    flex-direction: column;
   }
   
-  .profilovka {
-    width: 100%; /* Obrázek vyplní kontejner */
-    height: 100%; /* Obrázek vyplní kontejner */
-    object-fit: cover; /* Vyplnění kontejneru s oříznutím, zachování poměru stran */
-    display: block; /* Odstranění případných mezer pod obrázkem */
+  .imageContainer {
+    margin-bottom: 40px;
+    max-width: 400px;
+    width: 100%;
   }
   
-  .uvodniText { /* Nový styl pro úvodní text */
-    font-size: 1.2em;
-    line-height: 1.8;
-    color: #555;
-    max-width: 800px; /* Maximální šířka úvodního textu */
-    margin: 0 auto; /* Centrování úvodního textu */
-    margin-bottom: 40px; /* Margin pod úvodním textem */
+  .statItem {
+    min-width: 120px;
   }
   
-  .zkusenostiSection {
-    line-height: 1.7;
-    font-size: 1.1em;
-    text-align: left; /* Zarovnání textu v sekci zkušeností doleva */
-    max-width: 800px; /* Maximální šířka sekce zkušeností */
-    margin: 0 auto; /* Centrování sekce zkušeností */
+  .statNumber {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    min-height: 350px;
+    padding: 40px 15px;
   }
   
-  .zkusenostiSection h2 {
-    font-size: 2.2em;
-    margin-bottom: 20px;
-    color: #333;
-    text-align: center; /* Centrování nadpisu sekce zkušeností */
+  .title {
+    font-size: 3rem;
   }
   
-  .zkusenostiSection p {
-    margin-bottom: 25px;
+  .introSection,
+  .approachSection,
+  .testimonialsSection,
+  .certificatesSection,
+  .ctaSection {
+    padding: 60px 15px;
   }
   
-  /* Media queries pro menší obrazovky */
-  @media (max-width: 768px) {
-    .oMneContainer {
-      padding: 40px 15px; /* Menší boční padding pro stránku O mně na menších obrazovkách */
-    }
-  
-    .pageTitle {
-      font-size: 2.5em; /* Menší font pro nadpis stránky na menších obrazovkách */
-      margin-bottom: 20px; /* Menší margin pod nadpisem na menších obrazovkách */
-    }
-  
-    .uvodSection {
-      margin-bottom: 40px; /* Menší margin pod úvodní sekcí na menších obrazovkách */
-    }
-  
-    .profilovkaContainer {
-      width: 160px; /* Ještě menší šířka profilovky na menších obrazovkách */
-      height: 160px; /* Ještě menší výška profilovky na menších obrazovkách */
-      margin-bottom: 20px; /* Menší margin pod profilovkou na menších obrazovkách */
-    }
-  
-    .uvodniText {
-      font-size: 1.1em; /* Menší font pro úvodní text na menších obrazovkách */
-      margin-bottom: 30px; /* Menší margin pod úvodním textem na menších obrazovkách */
-    }
-  
-    .zkusenostiSection {
-      padding: 0 15px; /* Boční padding pro sekci zkušeností na menších obrazovkách */
-    }
-  
-    .zkusenostiSection h2 {
-      font-size: 2em; /* Menší font pro nadpis sekce zkušeností na menších obrazovkách */
-      margin-bottom: 15px; /* Menší margin pod nadpisem sekce zkušeností na menších obrazovkách */
-    }
-  
-    .zkusenostiSection p {
-      margin-bottom: 20px; /* Menší margin pod odstavci v sekci zkušeností na menších obrazovkách */
-    }
+  .sectionTitle,
+  .ctaTitle {
+    font-size: 2rem;
+    margin-bottom: 40px;
   }
+  
+  .approachText {
+    font-size: 1rem;
+  }
+  
+  .statsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .statItem {
+    padding: 15px;
+  }
+  
+  .ctaText {
+    font-size: 1.1rem;
+  }
+  
+  .ctaButton {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+  
+  .subtitle::before, .subtitle::after {
+    width: 20px;
+  }
+  
+  .subtitle::before {
+    left: -25px;
+  }
+  
+  .subtitle::after {
+    right: -25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    min-height: 300px;
+    padding: 30px 15px;
+  }
+  
+  .title {
+    font-size: 2.6rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .introSection,
+  .approachSection,
+  .testimonialsSection,
+  .certificatesSection,
+  .ctaSection {
+    padding: 40px 15px;
+  }
+  
+  .introTitle {
+    font-size: 1.8rem;
+  }
+  
+  .introParagraph,
+  .approachText {
+    font-size: 0.95rem;
+  }
+  
+  .featureCard,
+  .testimonialCard,
+  .certificateCard {
+    padding: 20px;
+  }
+  
+  .featureTitle,
+  .certificateTitle {
+    font-size: 1.1rem;
+  }
+  
+  .statsContainer {
+    grid-template-columns: 1fr;
+  }
+  
+  .sectionTitle,
+  .ctaTitle {
+    font-size: 1.8rem;
+  }
+  
+  .subtitle::before, .subtitle::after {
+    display: none;
+  }
+}

@@ -187,7 +187,17 @@ const HomePage: React.FC = () => {
           </div>
         </section>
         
-        {/* Odstraněna původní CTA sekce, protože teď bude součástí nové patičky */}
+        {/* CTA sekce - pouze na úvodní stránce */}
+        <section className={styles.ctaSection}>
+          <h2>Profesionální osobní trénink na míru</h2>
+          <p>
+            Získejte personalizovaný přístup, který vám pomůže dosáhnout vašich fitness cílů,
+            ať je to redukce váhy, budování svalové hmoty nebo zlepšení kondice.
+          </p>
+          <Link href="/kontakt" className={styles.ctaButton}>
+            NEZÁVAZNÁ KONZULTACE
+          </Link>
+        </section>
       </div>
     </>
   );
