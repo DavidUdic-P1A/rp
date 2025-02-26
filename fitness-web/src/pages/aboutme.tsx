@@ -38,7 +38,7 @@ const AboutMePage: React.FC = () => {
                   priority
                 />
                 <div className={styles.experienceBadge}>
-                  <span className={styles.experienceYears}>10+</span>
+                  <span className={styles.experienceYears}>3+</span>
                   <span className={styles.experienceText}>Let zkušeností</span>
                 </div>
               </div>
@@ -46,10 +46,10 @@ const AboutMePage: React.FC = () => {
             <div className={styles.introContent}>
               <h2 className={styles.introTitle}>Vítejte v&nbsp;mém světě fitness</h2>
               <p className={styles.introParagraph}>
-                Ahoj, jmenuji se Víťa a pomáhat lidem v tomhle směru bylo mým snem už od mala. Zatím mám za sebou přes 500 klientů, z čehož 99% bylo spokojených a tomu také odpovídají jejich celkové výsledky.
+                Ahoj, jmenuji se David Udič a pomáhat lidem v tomhle směru bylo mým snem už od mala. Zatím mám za sebou přes 50 klientů, z čehož 99% bylo spokojených a tomu také odpovídají jejich celkové výsledky.
               </p>
               <p className={styles.introParagraph}>
-                Mým cílem nikdy nebylo závodění na nějaké vysoké úrovni nebo různé powerlifterské soutěže, spíš šlo o to naučit se toho co nejvíc jak o cvičení, stravě a anabolikách a tyto informace potom dál předávat.
+                Mým cílem nikdy nebylo závodění na nějaké vysoké úrovni nebo různé powerlifterské soutěže, spíš šlo o to naučit se toho co nejvíc jak o cvičení, stravě tak suplementech a tyto informace potom dál předávat.
               </p>
               <div className={styles.signatureContainer}>
                 <Image
@@ -60,8 +60,8 @@ const AboutMePage: React.FC = () => {
                   className={styles.signatureImage}
                 />
                 <div className={styles.signatureInfo}>
-                  <p className={styles.signatureName}>Víťa Hatas</p>
-                  <p className={styles.signatureTitle}>Trenér, model, sexsymbol</p>
+                  <p className={styles.signatureName}>David Udič</p>
+                  <p className={styles.signatureTitle}>Trenér, poradce, terapeut</p>
                 </div>
               </div>
             </div>
@@ -152,7 +152,7 @@ const AboutMePage: React.FC = () => {
                 <FaStar />
               </div>
               <p className={styles.testimonialText}>
-                &quot;Díky Víťovi jsem během 6 měsíců shodil 15 kg a cítím se lépe než kdykoliv předtím. Nejvíc oceňuji jeho individuální přístup a to, že mi vysvětlil, proč dělám to, co dělám.&quot;
+                &quot;Díky Davidovi jsem během 6 měsíců shodil 15 kg a cítím se lépe než kdykoliv předtím. Nejvíc oceňuji jeho individuální přístup a to, že mi vysvětlil, proč dělám to, co dělám.&quot;
               </p>
               <div className={styles.testimonialAuthor}>
                 <span className={styles.authorName}>Petr N.</span>
@@ -169,7 +169,7 @@ const AboutMePage: React.FC = () => {
                 <FaStar />
               </div>
               <p className={styles.testimonialText}>
-                &quot;Jako žena jsem se bála, že budu příliš nabírat svalovou hmotu, ale Víťa mi sestavil trénink přesně na míru. Zpevnila jsem postavu, zlepšila kondici a cítím se skvěle!&quot;
+                &quot;Jako žena jsem se bála, že budu příliš nabírat svalovou hmotu, ale David mi sestavil trénink přesně na míru. Zpevnila jsem postavu, zlepšila kondici a cítím se skvěle!&quot;
               </p>
               <div className={styles.testimonialAuthor}>
                 <span className={styles.authorName}>Tereza K.</span>
@@ -186,7 +186,7 @@ const AboutMePage: React.FC = () => {
                 <FaStar />
               </div>
               <p className={styles.testimonialText}>
-                &quot;Po 40 jsem si myslel, že už nemůžu zlepšit svou fyzičku, ale mýlil jsem se. Za rok s Víťou jsem získal svalovou hmotu, zlepšil kondici a hlavně sebevědomí.&quot;
+                &quot;Po 40 jsem si myslel, že už nemůžu zlepšit svou fyzičku, ale mýlil jsem se. Za rok s Davidem jsem získal svalovou hmotu, zlepšil kondici a hlavně sebevědomí.&quot;
               </p>
               <div className={styles.testimonialAuthor}>
                 <span className={styles.authorName}>Martin V.</span>
