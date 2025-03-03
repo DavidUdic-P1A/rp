@@ -47,6 +47,9 @@ const Footer: React.FC = () => {
               <li>
                 <Link href="/kontakt" className={styles.footerLink}>Kontakt</Link>
               </li>
+              <li>
+                <Link href="/obchodni-podminky" className={styles.footerLink}>Obchodní podmínky a GDPR</Link>
+              </li>
             </ul>
           </div>
 
