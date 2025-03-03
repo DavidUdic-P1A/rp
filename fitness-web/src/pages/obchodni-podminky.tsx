@@ -29,20 +29,20 @@ const TermsPage: React.FC = () => {
             <section className={styles.termsSection}>
               <h3>1. ZÁKLADNÍ USTANOVENÍ A VYMEZENÍ SMLUVNÍCH STRAN</h3>
               <p>
-                Tyto všeobecné obchodní podmínky (dále jen "Obchodní podmínky"), které jsou v souladu se zákonem č. 89/2012 Sb., 
+                Tyto všeobecné obchodní podmínky (dále jen &quot;Obchodní podmínky&quot;), které jsou v souladu se zákonem č. 89/2012 Sb., 
                 stanovují práva a povinnosti v souvislosti s poskytováním služeb fitness coachingu.
               </p>
               <p>
-                Majitelem a provozovatelem služeb je David Udič (dále jen "Poskytovatel").
+                Majitelem a provozovatelem služeb je David Udič (dále jen &quot;Poskytovatel&quot;).
               </p>
               <p>
                 Objednavatelem je právnická nebo fyzická osoba, která uskuteční objednávku výživového poradenství nebo 
                 cvičebního programu elektronicky pomocí objednávkového formuláře, nebo telefonicky či jinou formou 
-                s Poskytovatelem (dále jen "Objednatel").
+                s Poskytovatelem (dále jen &quot;Objednatel&quot;).
               </p>
               <p>
-                Službami (dále jen "Služby") se rozumí služba formou poradenství ve výživě a suplementaci (dále jen "Poradenství") a 
-                cvičení pod dohledem fitness trenéra. Cvičení pod dohledem fitness trenéra (dále jen "Cvičení") se rozumí cvičení 
+                Službami (dále jen &quot;Služby&quot;) se rozumí služba formou poradenství ve výživě a suplementaci (dále jen &quot;Poradenství&quot;) a 
+                cvičení pod dohledem fitness trenéra. Cvičení pod dohledem fitness trenéra (dále jen &quot;Cvičení&quot;) se rozumí cvičení 
                 pod dohledem lektora, který nese zodpovědnost za provedené cviky. Poskytovatel se nepovažuje za lékaře. 
                 Je odborníkem přes cvičení a ve výživovém poradenství a pouze doporučuje skrze nejlepší vědomí a svědomí.
               </p>
@@ -57,7 +57,7 @@ const TermsPage: React.FC = () => {
                 Veškeré smluvní vztahy jsou uzavřeny v souladu s právním řádem České republiky.
               </p>
               <p>
-                Smluvní vztah mezi objednatelem a poskytovatelem vzniká odesláním elektronické objednávky služby (dále jen „Objednávka") 
+                Smluvní vztah mezi objednatelem a poskytovatelem vzniká odesláním elektronické objednávky služby (dále jen &quot;Objednávka&quot;) 
                 objednatelem a jejím přijetím poskytovatelem. Smluvní vztah znamená, že poskytovatel je povinen poskytovat objednateli 
                 objednané služby a objednatel je povinen uhradit jejich cenu.
               </p>
@@ -106,7 +106,7 @@ const TermsPage: React.FC = () => {
               <h4>A. Služby osobního fitness trenéra:</h4>
               <ul>
                 <li>Domluvená tréninková lekce je pro Objednavatele i Poskytovatele závazná.</li>
-                <li>Předplacená částka za lekce cvičení je nevratná (viz. vyjímky v sekci "reklamace a stížnosti)". Lekce cvičení je nutné vyčerpat během 12-ti měsíců, jinak propadají.</li>
+                <li>Předplacená částka za lekce cvičení je nevratná (viz. vyjímky v sekci &quot;reklamace a stížnosti)&quot;. Lekce cvičení je nutné vyčerpat během 12-ti měsíců, jinak propadají.</li>
                 <li>Pokud se Objednatel nedostaví na lekci cvičení nebo lekci nepřevede na jiný termín alespoň 24 hodin předem, považuje se tato lekce za vyčerpanou.</li>
                 <li>Poskytovatel si vyhrazuje právo zkrátit lekci v případě Vašeho pozdního příchodu na lekci o čas, o který se Objednavatel opozdil.</li>
                 <li>Pokud se Poskytovatel nemůže z jakéhokoliv důvodu domluvené lekce zúčastnit, je povinen Objednavateli tuto lekci nahradit v plném obsahu v jiném domluveném termínu, zároveň je povinen svou nepřítomnost oznámit klientovi bez zbytečného prodlení.</li>
@@ -145,7 +145,7 @@ const TermsPage: React.FC = () => {
               <h4>A. Služby fitness trenéra</h4>
               <p>
                 Objednavatel bere na vědomí, že dle Nového občanského zákoníku č.89/2012 Sb., §1837 písm. j, d), nelze odstoupit od smlouvy. 
-                Výjimku tvoří pouze závažné zdravotní problémy (viz. níže – neplatí pro službu "tréninkový plán na míru").
+                Výjimku tvoří pouze závažné zdravotní problémy (viz. níže – neplatí pro službu &quot;tréninkový plán na míru&quot;).
               </p>
               <p>
                 Vrácení peněz za nevyužité Služby je možné v případě závažných zdravotních důvodů, které musíte doložit lékařskou zprávou. 
