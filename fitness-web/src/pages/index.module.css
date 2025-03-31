@@ -6,262 +6,597 @@
 
 /* Hero Section Styles */
 .heroSection {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  max-height: 900px;
+  width: 100%;
+  color: white;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 80px 40px;
-  background: linear-gradient(135deg, var(--color-background), var(--color-secondary-background));
-  position: relative;
+  justify-content: center;
+  text-align: center;
   overflow: hidden;
-  min-height: 600px;
+}
+
+.heroBackdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/images/background.jpg') center/cover no-repeat;
+  filter: brightness(0.7) contrast(1.1);
+  z-index: 0;
+}
+
+.heroBackdrop::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+  z-index: 1;
+}
+
+.heroContainer {
+  position: relative;
+  z-index: 2;
   width: 100%;
-  box-sizing: border-box;
+  max-width: 1200px;
+  padding: 0 20px;
 }
 
 .heroContent {
-  flex: 1;
-  max-width: 600px;
-  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .heroTitle {
-  font-size: 3.5rem;
-  font-weight: 800;
-  margin-bottom: 16px;
-  line-height: 1.2;
-  color: var(--color-text-primary);
-  position: relative;
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-.heroTitle::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 80px;
-  height: 4px;
-  background: var(--color-primary);
-  border-radius: 2px;
+.heroTitleLine {
+  width: 100px;
+  height: 5px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-hover));
+  margin: 0 auto 28px;
+  border-radius: 3px;
 }
 
 .heroSubtitle {
   font-size: 1.8rem;
-  font-weight: 600;
-  margin-bottom: 24px;
+  font-weight: 500;
+  margin-bottom: 30px;
   color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .heroText {
-  font-size: 1.1rem;
-  margin-bottom: 36px;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
   line-height: 1.6;
-  color: var(--color-text-secondary);
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .heroButtons {
   display: flex;
-  gap: 16px;
-  margin-top: 24px;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.buttonArrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  margin-left: 5px;
+}
+
+.serviceButton:hover .buttonArrow {
+  transform: translateX(5px);
 }
 
 .primaryButton {
-  padding: 14px 32px;
-  background-color: var(--color-primary);
+  padding: 16px 40px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-hover));
   color: white;
-  border-radius: 30px;
-  font-weight: 600;
+  border-radius: 50px;
+  font-weight: 700;
   font-size: 1.1rem;
   transition: all 0.3s ease;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
   display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .primaryButton:hover {
-  background-color: var(--color-primary-hover);
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.25);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.45);
 }
 
 .secondaryButton {
-  padding: 14px 32px;
+  padding: 16px 40px;
   background-color: transparent;
-  color: var(--color-text-primary);
+  color: white;
   border: 2px solid var(--color-primary);
-  border-radius: 30px;
-  font-weight: 600;
+  border-radius: 50px;
+  font-weight: 700;
   font-size: 1.1rem;
   transition: all 0.3s ease;
   text-align: center;
   display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .secondaryButton:hover {
-  background-color: rgba(0, 123, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.1);
   transform: translateY(-3px);
 }
 
-.heroImageContainer {
-  flex: 1;
+/* Stats Section */
+.statsSection {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 70px 20px;
+  background: linear-gradient(90deg, var(--color-primary-dark), var(--color-primary));
+  color: white;
+  text-align: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+:global(.light) .statsSection {
+  background: white;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #0c47a1;
+  border-bottom: 4px solid #0c47a1;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
+  position: relative;
+}
+
+.statItem:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 25%;
+  right: 0;
+  height: 50%;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+:global(.light) .statItem:not(:last-child)::after {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.statNumber {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 12px;
+  color: white;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+:global(.dark) .statNumber {
+  background: linear-gradient(90deg, #ffffff, #e0e0e0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+
+:global(.light) .statNumber {
+  color: #0c47a1;
+  text-shadow: none;
+}
+
+.statText {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+:global(.light) .statText {
+  color: #333333;
+  font-weight: 600;
+  text-shadow: none;
+}
+
+/* Motto Section */
+.mottoSection {
+  position: relative;
+  padding: 100px 40px;
+  background: url('/images/background.jpg') center/cover fixed no-repeat;
+  min-height: 450px;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  z-index: 1;
-  max-width: 50%;
+  text-align: center;
+  color: white;
 }
 
-.heroImage {
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  object-fit: cover;
-  max-width: 100%;
+.mottoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.mottoContent {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 40px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.mottoTitle {
+  font-size: 2.7rem;
+  font-weight: 900;
+  margin-bottom: 30px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+.mottoTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 30%;
+  width: 40%;
+  height: 3px;
+  background: var(--color-primary);
+  border-radius: 2px;
+}
+
+.mottoText {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.mottoSignature {
+  margin-top: 30px;
+  filter: brightness(0) invert(1);
+  width: 150px;
   height: auto;
 }
 
-/* Marquee Section Styles */
+/* Marquee Animation */
 .marqueeSection {
-  overflow: hidden;
+  padding: 20px 0;
   background-color: var(--color-primary);
-  margin: 0;
-  padding: 15px 0;
-  width: 100%;
-  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
-.marqueeWrapper {
-  display: flex;
-  width: 100%;
-  overflow: hidden;
+:global(.light) .marqueeSection {
+  background-color: var(--color-primary-dark);
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.marqueeTrack {
+  white-space: nowrap;
+  will-change: transform;
+  animation: marqueeAnimation 30s linear infinite;
+  width: max-content;
 }
 
 @keyframes marqueeAnimation {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 .marqueeContent {
   display: flex;
   align-items: center;
-  white-space: nowrap;
-  animation: marqueeAnimation 30s linear infinite;
-  padding-left: 100%;
 }
 
 .marqueeContent span {
-  color: white;
-  font-size: 1.2rem;
-  font-weight: 700;
-  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
   padding: 0 20px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.3rem;
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .marqueeSeparator {
   color: rgba(255, 255, 255, 0.6);
-  font-size: 1.5rem;
-  margin: 0 10px;
+  font-size: 1.2rem;
+  padding: 0 10px;
 }
 
-/* Services Section Styles */
+/* Services Section */
 .servicesSection {
-  padding: 60px 20px;
+  padding: 100px 20px;
+  background-color: var(--color-background);
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.servicesBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.05;
+  background: 
+    radial-gradient(circle at 25px 25px, rgba(0, 123, 255, 0.2) 2%, transparent 0%),
+    radial-gradient(circle at 75px 75px, rgba(0, 123, 255, 0.2) 2%, transparent 0%);
+  background-size: 100px 100px;
+  z-index: -1;
+}
+
+:global(.light) .servicesSection {
+  background-color: #f8f9fa;
+}
+
+.sectionHeader {
   text-align: center;
-  width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 60px; /* Přidáno kvůli odstranění CTA sekce */
+  margin-bottom: 60px;
+  position: relative;
 }
 
 .servicesSection h2 {
-  font-size: 2.2em;
-  margin-bottom: 30px;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+}
+
+.servicesSection h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 5px;
+  background: linear-gradient(to right, var(--color-primary), var(--color-primary-hover));
+  border-radius: 3px;
+}
+
+:global(.light) .servicesSection h2 {
+  color: var(--color-text-primary);
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  color: var(--color-text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+:global(.light) .sectionSubtitle {
+  color: var(--color-text-secondary);
 }
 
 .servicesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 10px;
-  box-sizing: border-box;
+  max-width: 1200px;
 }
 
 .serviceCard {
-  background-color: var(--color-background);
-  border-radius: 12px;
+  position: relative;
+  transition: all 0.4s ease;
+  border-radius: 15px;
+  overflow: hidden;
+  height: 100%;
+  z-index: 1;
+}
+
+.serviceCardDecoration {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background: var(--color-primary);
+  opacity: 0.2;
+  border-radius: 0 0 0 100%;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.serviceCard:hover .serviceCardDecoration {
+  width: 100px;
+  height: 100px;
+  opacity: 0.3;
+}
+
+.serviceCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(0, 123, 255, 0.03));
+  border-radius: 15px;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.serviceCard:hover::before {
+  background: linear-gradient(135deg, rgba(0, 123, 255, 0.15), rgba(0, 123, 255, 0.05));
+}
+
+:global(.light) .serviceCard {
+  background-color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.serviceCardInner {
   padding: 30px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  box-shadow: 0 4px 6px var(--color-box-shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-sizing: border-box;
-  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  overflow: hidden;
 }
 
-/* Dark mode styles */
 :global(.dark) .serviceCard {
-  background-color: #1a1a1a;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.serviceIconContainer {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.serviceCard:hover .serviceIconContainer {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.serviceIcon {
+  font-size: 30px;
+}
+
+.serviceHeader {
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .serviceTitle {
   font-size: 1.5rem;
-  font-weight: 900;
-  margin: 0 0 20px 0;
-  letter-spacing: 0.5px;
-  color: var(--color-text-primary);
+  font-weight: 700;
+  margin-bottom: 15px;
+  background: linear-gradient(to right, var(--color-primary), var(--color-primary-hover));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
 }
 
 :global(.dark) .serviceTitle {
-  color: var(--color-text-primary);
-}
-
-/* Coaching+ gradient */
-.serviceCard:first-child .serviceTitle {
-  background: linear-gradient(45deg, #3B82F6, #60A5FA);
+  background: linear-gradient(to right, #fff, var(--color-primary));
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-:global(.dark) .serviceCard:first-child .serviceTitle {
-  background: linear-gradient(45deg, #60A5FA, #93C5FD);
+:global(.light) .serviceTitle {
+  color: var(--color-text-primary);
+}
+
+.serviceCard:first-child .serviceTitle {
+  color: white;
+  background: linear-gradient(to right, var(--color-primary), var(--color-primary-hover));
   -webkit-background-clip: text;
-  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 10px rgba(0, 123, 255, 0.3);
+}
+
+:global(.dark) .serviceCard:first-child .serviceTitle {
+  background: linear-gradient(to right, #fff, var(--color-primary));
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .serviceFeatures {
   list-style: none;
   padding: 0;
-  margin: 0 0 auto 0;
-  width: 100%;
+  margin: 0 0 30px 0;
+  flex-grow: 1;
 }
 
 .serviceFeatures li {
-  color: var(--color-text-secondary);
-  margin-bottom: 12px;
+  margin-bottom: 15px;
   font-size: 1rem;
-  display: flex;
-  align-items: center;
-  text-align: left;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 5px;
+  color: var(--color-text-primary);
+  transition: transform 0.2s ease;
+}
+
+.serviceFeatures li:hover {
+  transform: translateX(5px);
 }
 
 :global(.dark) .serviceFeatures li {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+:global(.light) .serviceFeatures li {
   color: var(--color-text-secondary);
 }
 
 .priceContainer {
-  margin: 20px 0;
-  display: flex;
-  align-items: baseline;
-  gap: 5px;
+  margin-top: auto;
+  margin-bottom: 20px;
 }
 
 .price {
@@ -271,220 +606,365 @@
 }
 
 :global(.dark) .price {
+  color: white;
+}
+
+:global(.light) .price {
   color: var(--color-primary);
 }
 
 .period {
-  color: var(--color-text-secondary);
   font-size: 1rem;
+  color: var(--color-text-secondary);
 }
 
 :global(.dark) .period {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+:global(.light) .period {
   color: var(--color-text-secondary);
 }
 
 .serviceButton {
-  background: none;
-  border: 1px solid var(--color-text-primary);
-  padding: 8px 20px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+  padding: 12px 30px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-hover));
+  color: white;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
   transition: all 0.3s ease;
-  color: var(--color-text-primary);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 :global(.dark) .serviceButton {
-  border: 1px solid var(--color-background);
-  color: var(--color-background);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .serviceButton:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
 }
 
 :global(.dark) .serviceButton:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
 }
 
-/* Hover effect for service cards - POPUP EFFECT */
 .serviceCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
 }
 
-/* Přidání nového breakpointu pro plynulejší přechod */
-@media (max-width: 900px) {
+:global(.light) .serviceCard:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* CTA Section */
+.ctaSection {
+  position: relative;
+  padding: 120px 40px;
+  background: url('/images/background.jpg') center/cover no-repeat;
+  min-height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.ctaOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.ctaContent {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.ctaTitle {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 25px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.ctaText {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 18px 45px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-hover));
+  color: white;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 123, 255, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.ctaButton:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.4);
+}
+
+@media (max-width: 1200px) {
+  .heroTitle {
+    font-size: 3.5rem;
+  }
+  
+  .servicesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 15px;
+  }
+  
+  .statNumber {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 992px) {
   .heroSection {
-    flex-direction: column;
-    padding: 60px 20px;
-    text-align: center;
+    height: auto;
+  }
+  
+  .heroTitle {
+    font-size: 3rem;
+  }
+  
+  .heroTitleLine {
+    margin-bottom: 20px;
   }
   
   .heroContent {
-    max-width: 100%;
-    margin-bottom: 40px;
+    padding: 30px;
   }
   
-  .heroTitle::after {
-    left: 50%;
-    transform: translateX(-50%);
+  .statsSection {
+    padding: 60px 20px;
+  }
+  
+  .statItem {
+    padding: 15px 20px;
+  }
+  
+  .servicesSection {
+    padding: 80px 20px;
+  }
+  
+  .servicesSection h2 {
+    font-size: 2.5rem;
+  }
+  
+  .mottoTitle {
+    font-size: 2.3rem;
+  }
+  
+  .mottoText {
+    font-size: 1.4rem;
+  }
+  
+  .ctaTitle {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContent {
+    max-width: 95%;
+    padding: 25px;
+  }
+  
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.5rem;
+  }
+  
+  .heroText {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
   }
   
   .heroButtons {
-    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
   }
   
-  .heroImageContainer {
-    max-width: 80%;
+  .primaryButton, .secondaryButton {
+    width: 100%;
+    padding: 15px 20px;
   }
-}
-
-/* Media query pro tablety / menší desktopy */
-@media (max-width: 1024px) {
+  
+  .statsSection {
+    flex-wrap: wrap;
+    padding: 50px 15px;
+  }
+  
+  .statItem {
+    width: 45%;
+    padding: 15px 10px;
+  }
+  
+  .statItem:not(:last-child)::after {
+    display: none;
+  }
+  
+  .statNumber {
+    font-size: 2.5rem;
+  }
+  
+  .statText {
+    font-size: 1rem;
+  }
+  
   .servicesGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    max-width: 500px;
   }
   
-  /* Marquee responsivity */
-  .marqueeContent span {
+  .mottoSection {
+    padding: 70px 20px;
+  }
+  
+  .mottoContent {
+    padding: 25px;
+  }
+  
+  .mottoTitle {
+    font-size: 2rem;
+  }
+  
+  .mottoText {
+    font-size: 1.2rem;
+  }
+  
+  .sectionHeader {
+    margin-bottom: 60px;
+  }
+  
+  .ctaSection {
+    padding: 80px 20px;
+  }
+  
+  .ctaTitle {
+    font-size: 2.2rem;
+  }
+  
+  .ctaText {
     font-size: 1.1rem;
-    padding: 0 15px;
+    margin-bottom: 30px;
+  }
+  
+  .ctaButton {
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 300px;
   }
 }
 
-/* Media query pro menší obrazovky (responzivita karet služeb) */
-@media (max-width: 768px) {
-  .servicesGrid {
-    grid-template-columns: 1fr; /* Na mobilech 1 sloupec - karty pod sebou */
-    padding: 0;
-  }
-
-  .serviceCard {
-    padding: 25px; /* Menší padding karet na mobilech */
-  }
-
-  .serviceTitle {
-    font-size: 1.4em; /* Menší font nadpisu služby na mobilech */
-  }
-
-  .serviceFeatures li {
-    font-size: 0.95em; /* Menší font popisku služby na mobilech */
-  }
-
-  .price {
-    font-size: 1.8em; /* Menší font ceny služby na mobilech */
-  }
-
-  .serviceButton {
-    font-size: 1em; /* Menší font tlačítka na mobilech */
-    padding: 10px 20px; /* Menší padding tlačítka na mobilech */
-  }
-  
-  /* Hero responsivity */
-  .heroSection {
-    padding: 40px 15px;
-    min-height: auto;
+@media (max-width: 576px) {
+  .heroContent {
+    padding: 25px 20px;
   }
   
   .heroTitle {
     font-size: 2.2rem;
   }
   
+  .heroTitleLine {
+    width: 80px;
+    margin-bottom: 15px;
+  }
+  
   .heroSubtitle {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
   }
   
   .heroText {
     font-size: 1rem;
+    margin-bottom: 25px;
   }
   
-  .heroButtons {
-    flex-direction: column;
-    gap: 12px;
+  .statsSection {
+    padding: 40px 10px;
+  }
+  
+  .statItem {
     width: 100%;
+    padding: 15px 0;
   }
   
-  .primaryButton, .secondaryButton {
-    width: 100%;
-    padding: 12px 20px;
-    box-sizing: border-box;
+  .statNumber {
+    font-size: 2.7rem;
   }
   
-  .heroImageContainer {
-    width: 100%;
-    max-width: 90%;
+  .mottoContent {
+    padding: 25px 15px;
   }
   
-  .heroImage {
-    width: 100%;
-    max-height: 400px;
-  }
-  
-  /* Marquee responsivity */
-  .marqueeContent span {
-    font-size: 0.9rem;
-    padding: 0 10px;
-  }
-  
-  .marqueeSeparator {
-    margin: 0 5px;
-  }
-  
-  .servicesSection {
-    margin-bottom: 0; /* Odstranění spodní mezery na mobilech */
-  }
-}
-
-@media (max-width: 480px) {
-  .heroSection {
-    padding: 30px 15px;
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-  }
-  
-  .heroContent {
-    width: 100%;
-  }
-  
-  .heroTitle {
+  .mottoTitle {
     font-size: 1.8rem;
   }
   
-  .heroSubtitle {
-    font-size: 1.2rem;
-    margin-bottom: 16px;
+  .mottoText {
+    font-size: 1.1rem;
   }
   
-  .heroText {
-    font-size: 0.95rem;
-    margin-bottom: 24px;
+  .servicesSection h2 {
+    font-size: 2rem;
   }
   
-  .heroImage {
-    max-width: 100%;
-    border-radius: 15px;
+  .sectionSubtitle {
+    font-size: 1.1rem;
   }
   
-  .marqueeContent span {
-    font-size: 0.8rem;
-    padding: 0 8px;
+  .serviceCardInner {
+    padding: 30px 20px;
   }
   
-  .marqueeSeparator {
-    font-size: 1.2rem;
-    margin: 0 5px;
+  .serviceTitle {
+    font-size: 1.4rem;
   }
   
-  .servicesGrid {
-    width: 100%;
-    padding: 0 10px;
-    gap: 20px;
+  .serviceFeatures li {
+    font-size: 1rem;
   }
   
-  .serviceCard {
-    padding: 20px 15px;
+  .ctaTitle {
+    font-size: 1.9rem;
+  }
+  
+  .ctaText {
+    font-size: 1rem;
+  }
+  
+  .ctaButton {
+    padding: 14px 30px;
+    font-size: 1rem;
   }
 }
